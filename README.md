@@ -1,1 +1,5 @@
-# Intro_AI_2026_1-Preguntas_LLM
+# Preguntas Data science
+
+Estudiante: Iván René Hernández García
+
+email: rene.hernandez@udea.edu.co 
