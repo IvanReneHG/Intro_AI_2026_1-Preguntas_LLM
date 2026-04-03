@@ -1,36 +1,35 @@
 #%%
+# question-0003-usecase-generator.py
 import numpy as np
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-import random
+from sklearn.preprocessing import PolynomialFeatures
 
-def generar_caso_de_uso_aplicar_pca():
-    n_samples = random.randint(20, 50)
-    n_features = random.randint(5, 10)
-    n_comp = 2
+def generar_caso_de_uso_generar_interacciones_puras():
+    """
+    Genera un caso donde tenemos 3 variables y queremos ver sus combinaciones.
+    Si X tiene columnas [A, B, C], el output debe ser [A, B, C, A*B, A*C, B*C].
+    """
+    # 5 muestras de 3 variables (ej: Precio, Publicidad, Descuento)
+    X = np.array([
+        [10, 2, 1],
+        [20, 5, 0],
+        [15, 3, 1],
+        [25, 8, 0],
+        [30, 10, 1]
+    ], dtype=float)
     
-    X = np.random.rand(n_samples, n_features)
+    # Lógica de validación
+    # interaction_only=True evita que salga A^2, B^2, etc.
+    poly = PolynomialFeatures(degree=2, interaction_only=True, include_bias=False)
+    X_expected = poly.fit_transform(X)
     
-    # Calcular Output esperado
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
-    pca = PCA(n_components=n_comp)
-    X_expected = pca.fit_transform(X_scaled)
-    
-    input_data = {'X': X, 'n_comp': n_comp}
-    output_data = X_expected
-    
-    return input_data, output_data
+    return {'X': X}, X_expected
 
 if __name__ == "__main__":
-    entrada, salida_esperada = generar_caso_de_uso_aplicar_pca()
+    entrada, salida_esperada = generar_caso_de_uso_generar_interacciones_puras()
     
-    print(f"=== ENTRADA (Matriz X de {entrada['X'].shape}) ===")
-    print("Primeras 3 filas de X:")
-    print(entrada['X'][:3])
+    print("=== INPUT (Variables Originales A, B, C) ===")
+    print(entrada['X'])
     
-    print("\n=== SALIDA ESPERADA (PCA transformado) ===")
-    print(f"Componentes solicitados: {entrada['n_comp']}")
-    print(f"Shape del resultado: {salida_esperada.shape}")
-    print("Primeras 3 filas del resultado:")
-    print(salida_esperada[:3])
+    print("\n=== OUTPUT (Originales + Interacciones A*B, A*C, B*C) ===")
+    print(salida_esperada)
+    print(f"\nNúmero de columnas final: {salida_esperada.shape[1]} (Esperado: 6)")
