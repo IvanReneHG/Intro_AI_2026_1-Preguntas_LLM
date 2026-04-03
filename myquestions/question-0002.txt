@@ -1,13 +1,13 @@
 El Problema:
-Trabajas en un almacén y recibes un listado de productos en un DataFrame que contiene las columnas 'categoria', 'stock' y 'precio_unitario'. Necesitas calcular el valor monetario total de cada categoría para un reporte financiero.
+Recibes un DataFrame con registros de sensores de temperatura. El DataFrame tiene las columnas 'timestamp' (en formato string), 'sensor_id' y 'lectura'. Necesitas obtener el promedio de temperatura por cada sensor, pero solo de los registros capturados en el año 2023.
 
 Tu Misión:
-Escribe una función llamada valor_por_categoria(df) que realice lo siguiente:
+Escribe una función llamada promedio_por_sensor_2023(df) que realice lo siguiente:
 
-	1. Cree una nueva columna llamada 'valor_total' que sea el resultado de multiplicar 'stock' por 	'precio_unitario'.
+Convierta la columna 'timestamp' a objetos datetime de pandas.
 
-	2. Agrupe los datos por la columna 'categoria'.
+Filtre el DataFrame para conservar únicamente las filas donde el año sea 2023.
 
-	3. Calcule la suma de la columna 'valor_total' para cada categoría.
+Agrupe los datos por 'sensor_id' y calcule el promedio de la columna 'lectura'.
 
-	4. Devuelva un nuevo DataFrame donde el índice sea la categoría y contenga únicamente la columna con 	la suma del valor total.
+Devuelva una Serie o DataFrame con el promedio por sensor.
