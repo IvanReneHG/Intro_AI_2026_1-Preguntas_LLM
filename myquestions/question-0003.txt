@@ -1,11 +1,15 @@
+Pregunta 0003 (Sklearn: Generación de Interacciones de Características)
 El Problema:
-Tienes un conjunto de datos con muchas variables y quieres reducirlo a solo 2 componentes principales para poder visualizarlo.
+En muchos fenómenos físicos y económicos, las variables no actúan solas. Por ejemplo, el efecto del "Precio" sobre las "Ventas" puede cambiar radicalmente si hay una "Promoción" activa. Necesitas crear nuevas columnas que representen la interacción combinada de tus variables originales, pero sin incluir los términos elevados al cuadrado (para evitar sobreajuste).
 
-Tu Misión: 
-Escribe una función llamada aplicar_pca(X, n_comp) que:
+Tu Misión: Escribe una función llamada generar_interacciones_puras(X) que realice lo siguiente:
 
-	1. Escale los datos de entrada X usando StandardScaler.
+Utilice PolynomialFeatures de la librería sklearn.preprocessing.
 
-	2. Aplique el algoritmo PCA de sklearn para reducir la dimensionalidad a n_comp.
+Configure el grado en degree=2.
 
-	3. Devuelva la matriz transformada (numpy array).
+Crucial: Establezca interaction_only=True y include_bias=False.
+
+Ajuste y transforme la matriz de entrada X.
+
+Devuelva la nueva matriz que contendrá las columnas originales más las columnas de interacción (pero no las cuadráticas).
