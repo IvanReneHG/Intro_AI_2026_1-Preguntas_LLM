@@ -1,4 +1,4 @@
-# Preguntas Data science
+# Preguntas Data Science
 
 Estudiante: Iván René Hernández García
 
