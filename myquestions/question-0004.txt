@@ -1,11 +1,12 @@
 El Problema:
-Has entrenado un modelo de clasificación binaria y necesitas evaluar su desempeño utilizando métricas estándar de la librería sklearn para reportar la precisión y los errores cometidos.
+Tienes una columna con ingresos económicos muy variados y quieres agruparlos en 4 categorías: "Bajo", "Medio", "Alto" y "Top". No quieres rangos fijos (como de 0 a 100), sino que quieres que cada categoría tenga exactamente la misma cantidad de personas (basado en los cuantiles de los datos).
 
-Tu Misión:
-Escribe una función llamada evaluar_clasificacion(y_real, y_pred) que realice lo siguiente:
+Tu Misión: Escribe una función llamada segmentar_por_cuantiles(df, col_nombre) que:
 
-	1. Calcule la matriz de confusión utilizando confusion_matrix de sklearn.
+Utilice la función pd.qcut de Pandas sobre la columna indicada.
 
-	2. Calcule la exactitud del modelo utilizando accuracy_score de sklearn.
+Divida los datos en 4 segmentos iguales (cuartiles).
 
-	3. Devuelva un diccionario con dos claves: 'matriz' (cuyo valor sea el array de la matriz de 	confusión) y 'exactitud' (cuyo valor sea el número flotante de la exactitud).
+Asigne las etiquetas: ['Bajo', 'Medio', 'Alto', 'Top'].
+
+Devuelva una Serie de Pandas con estas nuevas etiquetas.
