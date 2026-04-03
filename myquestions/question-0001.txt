@@ -1,0 +1,11 @@
+El Problema:
+Tienes un DataFrame con registros de ventas que incluye una columna de fechas en formato string y una columna de montos con algunos valores negativos (errores de sistema).
+
+Tu Misión: 
+Escribe una función llamada limpiar_ventas(df, col_fecha, col_monto) que:
+
+	1. Convierta la columna col_fecha a objetos datetime de pandas.
+
+	2. Reemplace cualquier valor negativo en col_monto por el promedio de los valores positivos de esa 	misma 	columna.
+
+	3. Devuelva el DataFrame modificado y el valor del promedio calculado (como float).

@@ -1,0 +1,11 @@
+El Problema:
+Tienes un conjunto de datos con muchas variables y quieres reducirlo a solo 2 componentes principales para poder visualizarlo.
+
+Tu Misión: 
+Escribe una función llamada aplicar_pca(X, n_comp) que:
+
+	1. Escale los datos de entrada X usando StandardScaler.
+
+	2. Aplique el algoritmo PCA de sklearn para reducir la dimensionalidad a n_comp.
+
+	3. Devuelva la matriz transformada (numpy array).

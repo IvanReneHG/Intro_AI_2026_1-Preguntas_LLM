@@ -1,0 +1,13 @@
+El Problema:
+Trabajas en un almacén y recibes un listado de productos en un DataFrame que contiene las columnas 'categoria', 'stock' y 'precio_unitario'. Necesitas calcular el valor monetario total de cada categoría para un reporte financiero.
+
+Tu Misión:
+Escribe una función llamada valor_por_categoria(df) que realice lo siguiente:
+
+	1. Cree una nueva columna llamada 'valor_total' que sea el resultado de multiplicar 'stock' por 	'precio_unitario'.
+
+	2. Agrupe los datos por la columna 'categoria'.
+
+	3. Calcule la suma de la columna 'valor_total' para cada categoría.
+
+	4. Devuelva un nuevo DataFrame donde el índice sea la categoría y contenga únicamente la columna con 	la suma del valor total.

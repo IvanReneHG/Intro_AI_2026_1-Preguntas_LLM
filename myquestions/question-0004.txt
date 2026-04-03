@@ -1,0 +1,11 @@
+El Problema:
+Has entrenado un modelo de clasificación binaria y necesitas evaluar su desempeño utilizando métricas estándar de la librería sklearn para reportar la precisión y los errores cometidos.
+
+Tu Misión:
+Escribe una función llamada evaluar_clasificacion(y_real, y_pred) que realice lo siguiente:
+
+	1. Calcule la matriz de confusión utilizando confusion_matrix de sklearn.
+
+	2. Calcule la exactitud del modelo utilizando accuracy_score de sklearn.
+
+	3. Devuelva un diccionario con dos claves: 'matriz' (cuyo valor sea el array de la matriz de 	confusión) y 'exactitud' (cuyo valor sea el número flotante de la exactitud).
