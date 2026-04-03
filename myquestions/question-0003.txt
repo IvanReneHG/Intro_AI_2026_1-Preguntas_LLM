@@ -1,4 +1,4 @@
-Pregunta 0003 (Sklearn: Generación de Interacciones de Características)
+
 El Problema:
 En muchos fenómenos físicos y económicos, las variables no actúan solas. Por ejemplo, el efecto del "Precio" sobre las "Ventas" puede cambiar radicalmente si hay una "Promoción" activa. Necesitas crear nuevas columnas que representen la interacción combinada de tus variables originales, pero sin incluir los términos elevados al cuadrado (para evitar sobreajuste).
 
